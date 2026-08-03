@@ -18,7 +18,7 @@ var BackupsView = (function () {
             "<h2>Backup Data</h2>" +
             '<button class="btn btn-primary btn-sm" id="btn-backup-now">+ Buat Backup Sekarang</button>' +
           "</div>" +
-          '<p class="profile-header-note">Backup otomatis dibuat tiap hari di server. Unduh salinannya secara berkala ke laptop/HP kamu sendiri - jangan cuma mengandalkan salinan yang ada di server.</p>' +
+          '<p class="profile-header-note">Backup otomatis dibuat tiap hari di server. Unduh salinannya secara berkala ke laptop/HP.</p>' +
           '<div id="backup-list" class="entry-list"></div>' +
         "</div>" +
       "</section>"
