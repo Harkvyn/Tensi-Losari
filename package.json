@@ -1,0 +1,19 @@
+{
+  "name": "pantau-tensi",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portal petugas untuk mencatat dan memantau tensi pasien.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-rate-limit": "^8.6.1",
+    "helmet": "^8.3.0"
+  }
+}

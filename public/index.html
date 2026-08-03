@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pantau Tensi</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===================== LOGIN / SETUP (petugas) ===================== -->
+<div id="view-auth" class="auth-screen">
+  <div class="auth-card">
+    <div class="brand">
+      <div class="brand-mark">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 21s-7.5-4.7-10-9.3C0.2 8.1 1.7 4 5.4 3.2 8 2.6 10.4 4 12 6.3 13.6 4 16 2.6 18.6 3.2 22.3 4 23.8 8.1 22 11.7 19.5 16.3 12 21 12 21Z" stroke="#111827" stroke-width="1.4" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <h1>Pantau Tensi</h1>
+        <p>Portal petugas &middot; data tensi pasien</p>
+      </div>
+    </div>
+
+    <div class="auth-tabs">
+      <button type="button" class="auth-tab-btn active" data-authtab="login">Masuk</button>
+      <button type="button" class="auth-tab-btn" data-authtab="register">Daftar Akun</button>
+    </div>
+
+    <!-- Login form -->
+    <form id="form-login" class="auth-form">
+      <label class="field">
+        <span>Username</span>
+        <input type="text" id="login-username" placeholder="username" required maxlength="30" autocomplete="username">
+      </label>
+      <label class="field">
+        <span>Password</span>
+        <input type="password" id="login-password" placeholder="••••••••" required autocomplete="current-password">
+      </label>
+      <p id="login-error" class="field-error hidden"></p>
+      <button type="submit" class="btn btn-primary btn-block">Masuk</button>
+    </form>
+
+    <!-- Register form (any staff member with the invite code can create their own account) -->
+    <form id="form-register" class="auth-form hidden">
+      <label class="field">
+        <span>Kode Undangan</span>
+        <input type="text" id="register-invite" placeholder="dari koordinator posyandu" required autocomplete="off">
+      </label>
+      <label class="field">
+        <span>Nama Lengkap</span>
+        <input type="text" id="register-name" placeholder="Nama Anda" required maxlength="40" autocomplete="name">
+      </label>
+      <label class="field">
+        <span>Posyandu</span>
+        <select id="register-posyandu" required>
+          <option value="" disabled selected>Memuat daftar posyandu...</option>
+        </select>
+      </label>
+      <label class="field">
+        <span>Username</span>
+        <input type="text" id="register-username" placeholder="username" required maxlength="30" autocomplete="username">
+      </label>
+      <label class="field">
+        <span>Password</span>
+        <input type="password" id="register-password" placeholder="minimal 6 karakter" required minlength="6" autocomplete="new-password">
+      </label>
+      <label class="field">
+        <span>Konfirmasi Password</span>
+        <input type="password" id="register-password2" placeholder="ulangi password" required minlength="6" autocomplete="new-password">
+      </label>
+      <p id="register-error" class="field-error hidden"></p>
+      <button type="submit" class="btn btn-primary btn-block">Daftar &amp; Masuk</button>
+    </form>
+  </div>
+</div>
+
+<!-- ===================== APP SHELL (post login) ===================== -->
+<div id="view-shell" class="shell hidden">
+  <header class="topbar">
+    <div class="topbar-brand">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 21s-7.5-4.7-10-9.3C0.2 8.1 1.7 4 5.4 3.2 8 2.6 10.4 4 12 6.3 13.6 4 16 2.6 18.6 3.2 22.3 4 23.8 8.1 22 11.7 19.5 16.3 12 21 12 21Z" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      <span>Pantau Tensi</span>
+    </div>
+    <div class="topbar-user">
+      <span id="topbar-username">Halo</span>
+      <button id="btn-goto-backups" class="btn btn-ghost btn-sm">Backup</button>
+      <button id="btn-logout" class="btn btn-ghost btn-sm">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Keluar
+      </button>
+    </div>
+  </header>
+
+  <main class="content">
+    <div id="view-root"></div>
+  </main>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+
+<script src="js/utils.js"></script>
+<script src="js/store.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/router.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/views/auth.js"></script>
+<script src="js/views/dashboard.js"></script>
+<script src="js/views/patientForm.js"></script>
+<script src="js/views/patientProfile.js"></script>
+<script src="js/views/backups.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
