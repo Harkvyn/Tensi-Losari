@@ -3,11 +3,11 @@ var Utils = (function () {
   "use strict";
 
   var CATEGORIES = [
-    { key: "crisis",   label: "Krisis Hipertensi",  color: "var(--c-crisis)",   test: function (s, d) { return s >= 180 || d >= 120; } },
-    { key: "stage2",   label: "Hipertensi Tahap 2", color: "var(--c-stage2)",   test: function (s, d) { return s >= 140 || d >= 90; } },
-    { key: "stage1",   label: "Hipertensi Tahap 1", color: "var(--c-stage1)",   test: function (s, d) { return s >= 130 || d >= 80; } },
-    { key: "elevated", label: "Meningkat",          color: "var(--c-elevated)", test: function (s, d) { return s >= 120 && d < 80; } },
-    { key: "normal",   label: "Normal",             color: "var(--c-normal)",   test: function () { return true; } }
+    { key: "crisis",       label: "Krisis Hipertensi",  color: "var(--c-crisis)",       test: function (s, d) { return s >= 180 || d >= 110; } },
+    { key: "stage2",       label: "Hipertensi Tahap 2", color: "var(--c-stage2)",       test: function (s, d) { return s >= 160 || d >= 100; } },
+    { key: "stage1",       label: "Hipertensi Tahap 1", color: "var(--c-stage1)",       test: function (s, d) { return s >= 140 || d >= 90; } },
+    { key: "prehipertensi", label: "Pra-Hipertensi",    color: "var(--c-prehipertensi)", test: function (s, d) { return s >= 120 || d >= 80; } },
+    { key: "normal",       label: "Normal",             color: "var(--c-normal)",       test: function () { return true; } }
   ];
 
   function classifyBP(systolic, diastolic) {
