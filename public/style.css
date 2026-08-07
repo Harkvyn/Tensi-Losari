@@ -10,7 +10,7 @@
   --radius: 16px;
 
   --c-normal: #16a34a;
-  --c-elevated: #d97706;
+  --c-prehipertensi: #d97706;
   --c-stage1: #ea580c;
   --c-stage2: #dc2626;
   --c-crisis: #7f1d1d;
@@ -258,7 +258,7 @@ html, body {
   background: var(--ink-faint);
 }
 .badge.b-normal { background: var(--c-normal); }
-.badge.b-elevated { background: var(--c-elevated); }
+.badge.b-prehipertensi { background: var(--c-prehipertensi); }
 .badge.b-stage1 { background: var(--c-stage1); }
 .badge.b-stage2 { background: var(--c-stage2); }
 .badge.b-crisis { background: var(--c-crisis); }
